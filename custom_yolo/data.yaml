@@ -1,0 +1,13 @@
+train: ../custom_yolo/dataset/train/images
+val: ../custom_yolo/dataset/valid/images
+test: ../custom_yolo/dataset/test/images
+
+nc: 1
+names: ['card']
+
+roboflow:
+  workspace: wfc
+  project: wfc-n57ch
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/wfc/wfc-n57ch/dataset/2
