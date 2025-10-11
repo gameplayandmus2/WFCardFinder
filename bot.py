@@ -90,11 +90,16 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if score < threshold:
             continue
         found = True
+        price_info = ""
+        if "price" in card:
+            price_info = f"💰 Цена: `{card['price']['price']}₽`\n"
         caption = (
             f"{idx + 1}⃣ *{card['title']}*\n"
-            f"📦 Set: `{card['set']}`\n"
+            f"👾 Тайтл: `{card['series']}`\n"
+            f"📦 Set: [{card['set']}](https://waifucards.app/set/{card['set']})\n"
             f"🌟 Rarity: `{card['rarity']}`\n"
-            f"🔗 [Открыть на сайте](https://waifucards.app/set/{card['set']}?character={quote(card['title'])}&rarity={card['rarity']}&items=120)\n"
+            f"{price_info}"
+            f"🔗 [Открыть на сайте](https://waifucards.app/cards?number={card['card_id']})\n"
             f"📈 Совпадение: `{round(score * 100, 2)}%`"
         )
         image_path = os.path.join("cards", card["image"])

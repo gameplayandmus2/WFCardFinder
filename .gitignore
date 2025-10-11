@@ -3,5 +3,6 @@ __pycache__/
 *.pyc
 cards/
 data/clip_index.npz
-custom_yolo/best.pt
+yolov5
+UPD.zip
 .env
